@@ -88,13 +88,29 @@ void insere()
 	cin >> novo->valor;
 	novo->prox = NULL;
 
+	if (inicio == NULL) {
+		inicio = novo; 
+		fim = novo; 
+	}
+	else {
+		fim->prox = novo; 
+		fim = novo; 
+	}
 
 }
 
 void remove()
 {
+	if (inicio == NULL) {
+		cout << "Nao existe mais elemento aqui" << endl; 
+	}
+	else {
+	NO* aux = inicio;
+	inicio = inicio->prox; 
+	cout << "O elemento " << aux->valor << " foi removido" << endl; 
+	free(aux);
 
-
+	}
 
 }
 
